@@ -26,7 +26,7 @@ const ensureAuthenticated = (
     const decoded = verify(token, authConfig.jwt.secret);
     const { sub } = decoded as TokenPayload;
 
-    response.user = {
+    request.user = {
       id: sub,
     };
     return next();
